@@ -12,7 +12,7 @@ export default function Header() {
         'font-extrabold text-xl',
         'max-w-5xl mx-auto',
         'z-40 relative bg-primary-foreground backdrop-filter bg-opacity-80',
-        'mt-10 px-8 py-4 rounded-full',
+        'mt-2 px-8 py-4 rounded-full',
         'flex justify-between'
       )}
     >

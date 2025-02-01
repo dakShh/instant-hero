@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import { Button } from '../ui/button'
 import Header from './Header'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
         <div className='h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 rounded-full bg-gradient-to-tl from-primary/20 via-primary/90 to-primary/20 blur-3xl' />
       </div>
       {/* End Gradients */}
-      <div className='relative z-10  py-24 lg:py-16'>
+      <div className='relative z-10'>
         <div className='container py-10 lg:py-16'>
           <div className='mx-auto max-w-2xl text-center'>
             <p className=''>Elevate your first impression</p>
@@ -31,14 +32,23 @@ export default function Hero() {
             </div>
             {/* Buttons */}
             <div className='mt-8 flex justify-center gap-3'>
-              <Button size={'lg'}>Get started</Button>
               <Button size={'lg'} variant={'outline'}>
-                Learn more
+                Try Demo
               </Button>
+              <Button size={'lg'}>Get started</Button>
             </div>
             {/* End Buttons */}
           </div>
         </div>
+      </div>
+      <div className='max-w-5xl mx-auto overflow-hidden rounded-3xl bg-red-800 max-h-[500px]'>
+        <img
+          alt='ad'
+          src={
+            'https://cdn.dribbble.com/userupload/16806714/file/original-76c22df00c5798daa7fd7bd0e53ef34e.png?resize=1200x900&vertical=center'
+          }
+          className='mx-auto w-full h-full'
+        />
       </div>
     </div>
   )
