@@ -55,7 +55,7 @@ Building a beautiful first impression shouldn't be time-consuming. Instant Hero 
 
 We welcome contributions! If you have ideas, feedback, or want to contribute, feel free to open an issue or submit a pull request.
 
-## <!-- -
+<!-- -
 
 ## 📬 Stay Connected
 
@@ -63,7 +63,10 @@ Follow our journey and updates:
 
 -   🌍 Website: [Coming Soon]
     🐦 Twitter: [@InstantHeroAI](#) -->
--   📩 Email: dakshkhatri.work@gmail.com
+
+---
+
+If you have any questions or ideas or want to collaborate, feel free to reach out: dakshkhatri.work@gmail.com
 
 ---
 
