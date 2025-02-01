@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Instant Hero 🚀
 
-## Getting Started
+Effortless AI-Powered Hero Sections for Stunning Websites
 
-First, run the development server:
+✨ What is Instant Hero?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Instant Hero is an AI-powered tool that generates beautiful, responsive, and customizable hero sections for your website. Say goodbye to the hassle of designing from scratch—our smart generator creates high-converting hero sections in seconds!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🎯 Key Features:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+AI-Powered Generation – Get pixel-perfect hero sections instantly.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Drag & Drop Customization – Easily tweak elements to match your brand.
 
-## Learn More
+Fully Responsive – Looks amazing on all devices.
 
-To learn more about Next.js, take a look at the following resources:
+Code Export – Get clean, ready-to-use HTML, CSS, and React code.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Endless Variations – Generate unique hero sections effortlessly.
