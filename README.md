@@ -15,8 +15,9 @@ Instant Hero is an AI-powered tool that generates beautiful, responsive, and cus
 -   **Fully Responsive** – Looks amazing on all devices.
 -   **Code Export** – Get clean, ready-to-use HTML, CSS, and React code.
 -   **Endless Variations** – Generate unique hero sections effortlessly.
+<!--
 
-## <!--
+##
 
 ## 🚀 How It Works
 
@@ -54,14 +55,14 @@ Building a beautiful first impression shouldn't be time-consuming. Instant Hero 
 
 We welcome contributions! If you have ideas, feedback, or want to contribute, feel free to open an issue or submit a pull request.
 
----
+## <!-- -
 
 ## 📬 Stay Connected
 
 Follow our journey and updates:
 
 -   🌍 Website: [Coming Soon]
-<!-- - 🐦 Twitter: [@InstantHeroAI](#) -->
+    🐦 Twitter: [@InstantHeroAI](#) -->
 -   📩 Email: dakshkhatri.work@gmail.com
 
 ---
