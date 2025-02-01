@@ -1,3 +1,5 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 
 import { Button } from '../ui/button'
@@ -5,6 +7,7 @@ import { Button } from '../ui/button'
 // Icons
 import { Rocket } from 'lucide-react'
 
+import { signIn } from 'next-auth/react'
 export default function Header() {
   return (
     <div
@@ -20,7 +23,7 @@ export default function Header() {
         <Rocket />
         Instant Hero
       </div>
-      <Button>Get started</Button>
+      <Button onClick={() => signIn('google')}>Get started</Button>
     </div>
   )
 }
