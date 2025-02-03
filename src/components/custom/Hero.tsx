@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
       {/* End Gradients */}
       <div className='relative z-10'>
-        <div className='container py-10 lg:py-16'>
+        <div className='container mx-auto py-10 lg:py-16'>
           <div className='mx-auto max-w-2xl text-center'>
             <p className=''>Elevate your first impression</p>
             {/* Title */}
