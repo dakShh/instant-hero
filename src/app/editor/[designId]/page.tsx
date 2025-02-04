@@ -9,6 +9,9 @@ import { cn } from '@/lib/utils'
 import EditorHeader from '@/components/editor/editorHeader'
 import Footer from '@/components/custom/Footer'
 
+// Components
+import ElementSidebar from '@/components/editor/ElementSidebar'
+
 export default function Editor() {
   const { status } = useSession()
   const router = useRouter()
@@ -29,8 +32,8 @@ export default function Editor() {
   return (
     <div className={cn('container mx-auto', 'relative ')}>
       <EditorHeader />
-      <div className={cn('grid grid-cols-5', 'h-[85vh]')}>
-        <div>Elements</div>
+      <div className={cn('grid grid-cols-5', 'h-[90vh]')}>
+        <ElementSidebar />
         <div className={cn('col-span-3', 'bg-neutral-600')}>editor</div>
         <div>Settings</div>
       </div>
