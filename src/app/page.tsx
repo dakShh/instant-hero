@@ -14,7 +14,7 @@ export default async function Home() {
   const session = await getUser()
 
   if (session?.user) {
-    redirect('/dashboard')
+    redirect('/designs')
   }
 
   return (
