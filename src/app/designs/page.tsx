@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 import Header from '@/components/custom/Header'
 
 import { Plus } from 'lucide-react'
+import Footer from '@/components/custom/Footer'
 
 export default function Dashboard() {
   const { data: session, status } = useSession()
@@ -24,7 +25,7 @@ export default function Dashboard() {
   if (status === 'loading') return <p className={cn('h-screen w-screen grid place-items-center')}>Loading...</p>
 
   return (
-    <div className={cn('overflow-hidden relative h-screen')}>
+    <div className={cn('overflow-hidden relative')}>
       <Header />
       {/* Gradients */}
       <div aria-hidden='true' className='absolute -top-[27rem] start-1/2 flex -translate-x-1/2 transform'>
@@ -32,7 +33,7 @@ export default function Dashboard() {
         <div className='h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 rounded-full bg-gradient-to-tl from-primary/20 via-primary/90 to-primary/20 blur-3xl' />
       </div>
       {/* End Gradients */}
-      <div className={cn('z-50 relative', 'container max-w-6xl mx-auto', 'px-10 my-20')}>
+      <div className={cn('z-50 relative min-h-[25vh]', 'container max-w-6xl mx-auto', 'px-10 my-20')}>
         <div className={cn('text-3xl font-extrabold')}>Designs</div>
 
         {/* TODO: make this into a card */}
@@ -47,6 +48,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
