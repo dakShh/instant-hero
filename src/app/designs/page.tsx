@@ -3,8 +3,6 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
-import { signOut } from 'next-auth/react'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Header from '@/components/custom/Header'
 
@@ -12,7 +10,7 @@ import { Plus } from 'lucide-react'
 import Footer from '@/components/custom/Footer'
 
 export default function Dashboard() {
-  const { data: session, status } = useSession()
+  const { status } = useSession()
 
   const router = useRouter()
 
