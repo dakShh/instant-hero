@@ -8,7 +8,9 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <SessionProvider>
-      <CommonContextProvider.Provider value={{ loading, setLoading }}>{children}</CommonContextProvider.Provider>
+      <CommonContextProvider.Provider value={{ loading, setLoading }}>
+        {children}
+      </CommonContextProvider.Provider>
     </SessionProvider>
   )
 }
@@ -16,7 +18,9 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 export const useCommonContext = () => {
   const context = useContext(CommonContextProvider)
   if (!context) {
-    throw new Error('useCommonContext must be used within a CommonContextProvider')
+    throw new Error(
+      'useCommonContext must be used within a CommonContextProvider'
+    )
   }
   return context
 }

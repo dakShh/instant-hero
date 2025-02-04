@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
     <footer className=''>
-      <div className='mx-auto max-w-6xl w-full px-4 pt-16 pb-8 sm:px-6 lg:px-8 lg:pt-24'>
-        <div className='mt-16 border-t border-neutral-50 pt-8 sm:flex sm:items-center sm:justify-between lg:mt-24'>
+      <div className='mx-auto max-w-6xl w-full px-4 pb-8 sm:px-6 lg:px-8'>
+        <div className='mt-5 border-t border-neutral-50 pt-8 sm:flex sm:items-center sm:justify-between '>
           <ul className='flex flex-wrap text-white justify-center gap-4 text-sm lg:justify-end'>
             <li>
               <a href='#' className='opacity-40 transition hover:opacity-75'>
