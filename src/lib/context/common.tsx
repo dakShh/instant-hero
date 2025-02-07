@@ -1,4 +1,4 @@
-import { ElementType } from '@/components/editor/ElementSidebar'
+import { ElementType, LayoutType } from '@/components/editor/ElementSidebar'
 import { createContext } from 'react'
 
 interface CommonContextType {
@@ -12,13 +12,13 @@ interface ScreenSizeContextType {
 }
 
 interface DragDropLayoutContextType {
-  draggedElement: ElementType | null
-  setDraggedElement: React.Dispatch<React.SetStateAction<ElementType | null>>
+  draggedElement: LayoutType | null
+  setDraggedElement: React.Dispatch<React.SetStateAction<LayoutType | null>>
 }
 
 interface TemplateContentContextType {
-  templateContent: ElementType[]
-  setTemplateContent: React.Dispatch<React.SetStateAction<ElementType[]>>
+  templateContent: LayoutType[]
+  setTemplateContent: React.Dispatch<React.SetStateAction<LayoutType[]>>
 }
 
 export const CommonContextProvider = createContext<CommonContextType | undefined>(undefined)

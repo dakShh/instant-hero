@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { useDraggedElement, useScreenSize, useTemplateContent } from '@/providers'
 import { DragEvent, useState } from 'react'
-import { LayoutType } from './ElementSidebar'
+import { ElementType, LayoutType } from './ElementSidebar'
 import Columns from './elements/Columns'
 
 export default function Canvas() {
@@ -22,7 +22,7 @@ export default function Canvas() {
     setOnDragOver(false)
   }
 
-  const getElementComponent = (element: LayoutType) => {
+  const getLayoutComponent = (element: LayoutType) => {
     return <Columns element={element} />
   }
 
@@ -44,7 +44,7 @@ export default function Canvas() {
         {templateContent?.length > 0 ? (
           templateContent?.map((content, index) => (
             <div key={index} className='mb-2 grid'>
-              {getElementComponent(content)}
+              {getLayoutComponent(content)}
             </div>
           ))
         ) : (
