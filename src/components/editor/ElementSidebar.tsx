@@ -1,8 +1,8 @@
 import { Columns2, Columns3, LucideIcon, RectangleHorizontal } from 'lucide-react'
-import ElementCard from './ElementCard'
 import { useDraggedElement } from '@/providers'
+import LayoutCard from './LayoutCard'
 
-export interface ElementType {
+export interface LayoutType {
   label: string
   type: string
   numOfColumn: number
@@ -10,7 +10,7 @@ export interface ElementType {
   id?: string
 }
 
-const ELEMENTS: ElementType[] = [
+const LAYOUTS: LayoutType[] = [
   {
     label: 'Single Column',
     type: 'column',
@@ -34,7 +34,7 @@ const ELEMENTS: ElementType[] = [
 export default function ElementSidebar() {
   const { setDraggedElement } = useDraggedElement()
 
-  function onDragLayoutStart(element: ElementType) {
+  function onDragLayoutStart(element: LayoutType) {
     setDraggedElement({ ...element, id: Date.now().toString() })
   }
 
@@ -42,10 +42,10 @@ export default function ElementSidebar() {
     <div className='px-5 py-4'>
       <div className='font-bold text-xl mb-4'> Layout </div>
       <div className='grid grid-cols-2 gap-4'>
-        {ELEMENTS?.map((element, index) => {
+        {LAYOUTS?.map((layout, index) => {
           return (
-            <div key={index} draggable onDragStart={() => onDragLayoutStart(element)}>
-              <ElementCard element={element} />
+            <div key={index} draggable onDragStart={() => onDragLayoutStart(layout)}>
+              <LayoutCard layout={layout} />
             </div>
           )
         })}

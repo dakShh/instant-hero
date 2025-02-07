@@ -24,11 +24,7 @@ export default function Editor() {
   }, [status, router])
 
   if (status === 'loading')
-    return (
-      <p className={cn('h-screen w-screen grid place-items-center')}>
-        Loading...
-      </p>
-    )
+    return <p className={cn('h-screen w-screen grid place-items-center')}>Loading...</p>
 
   return (
     <div className={cn('container mx-auto', 'relative ')}>

@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { useDraggedElement, useScreenSize, useTemplateContent } from '@/providers'
 import { DragEvent, useState } from 'react'
-import { ElementType } from './ElementSidebar'
+import { LayoutType } from './ElementSidebar'
 import Columns from './elements/Columns'
 
 export default function Canvas() {
@@ -22,7 +22,7 @@ export default function Canvas() {
     setOnDragOver(false)
   }
 
-  const getElementComponent = (element: ElementType) => {
+  const getElementComponent = (element: LayoutType) => {
     return <Columns element={element} />
   }
 
@@ -40,15 +40,16 @@ export default function Canvas() {
           'text-secondary-foreground'
         )}
       >
+        <div className='invisible grid-cols-3'></div>
         {templateContent?.length > 0 ? (
           templateContent?.map((content, index) => (
-            <div key={index} className='mb-2'>
+            <div key={index} className='mb-2 grid'>
               {getElementComponent(content)}
             </div>
           ))
         ) : (
           <div className={cn('bg-neutral-200 border border-dashed', 'p-4', 'text-center')}>
-            Add elements here
+            Add Layouts Here
           </div>
         )}
       </div>
