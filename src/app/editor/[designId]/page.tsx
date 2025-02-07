@@ -6,11 +6,12 @@ import { useEffect } from 'react'
 
 // Utility
 import { cn } from '@/lib/utils'
-import EditorHeader from '@/components/editor/editorHeader'
+import EditorHeader from '@/components/editor/EditorHeader'
 import Footer from '@/components/custom/Footer'
 
 // Components
 import ElementSidebar from '@/components/editor/ElementSidebar'
+import Canvas from '@/components/editor/Canvas'
 
 export default function Editor() {
   const { status } = useSession()
@@ -34,7 +35,9 @@ export default function Editor() {
       <EditorHeader />
       <div className={cn('grid grid-cols-5', 'h-[90vh]')}>
         <ElementSidebar />
-        <div className={cn('col-span-3', 'bg-neutral-600')}>editor</div>
+        <div className={cn('col-span-3', 'bg-neutral-600')}>
+          <Canvas />
+        </div>
         <div>Settings</div>
       </div>
       <Footer />

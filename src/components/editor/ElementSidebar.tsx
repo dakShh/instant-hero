@@ -1,46 +1,53 @@
-import {
-  Columns2,
-  Columns3,
-  LucideIcon,
-  RectangleHorizontal
-} from 'lucide-react'
+import { Columns2, Columns3, LucideIcon, RectangleHorizontal } from 'lucide-react'
 import ElementCard from './ElementCard'
+import { useDraggedElement } from '@/providers'
 
 export interface ElementType {
   label: string
   type: string
   numOfColumn: number
   icon: LucideIcon
+  id?: string
 }
 
-const elements: ElementType[] = [
+const ELEMENTS: ElementType[] = [
   {
-    label: '1Column',
+    label: 'Single Column',
     type: 'column',
     numOfColumn: 1,
     icon: RectangleHorizontal
   },
   {
-    label: '2 Column',
-    type: 'column-2',
+    label: 'Two Column',
+    type: 'column',
     numOfColumn: 2,
     icon: Columns2
   },
   {
-    label: '3 Column',
-    type: 'column-3',
+    label: 'Three Column',
+    type: 'column',
     numOfColumn: 3,
     icon: Columns3
   }
 ]
 
 export default function ElementSidebar() {
+  const { setDraggedElement } = useDraggedElement()
+
+  function onDragLayoutStart(element: ElementType) {
+    setDraggedElement({ ...element, id: Date.now().toString() })
+  }
+
   return (
-    <div className='px-2 py-4'>
-      <div className='font-bold text-xl mb-2'> Layout </div>
+    <div className='px-5 py-4'>
+      <div className='font-bold text-xl mb-4'> Layout </div>
       <div className='grid grid-cols-2 gap-4'>
-        {elements?.map((element, index) => {
-          return <ElementCard key={index} element={element} />
+        {ELEMENTS?.map((element, index) => {
+          return (
+            <div key={index} draggable onDragStart={() => onDragLayoutStart(element)}>
+              <ElementCard element={element} />
+            </div>
+          )
         })}
       </div>
     </div>
