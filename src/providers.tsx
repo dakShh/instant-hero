@@ -7,20 +7,23 @@ import {
   ScreenSizeContext,
   TemplateContentContext
 } from './lib/context/common'
-import { LayoutType } from './components/editor/ElementSidebar'
+import { ElementType, LayoutType } from './components/editor/ElementSidebar'
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState<boolean>(false)
   const [screenSize, setScreenSize] = useState<'desktop' | 'mobile'>('desktop')
-  const [draggedElement, setDraggedElement] = useState<LayoutType | null>(null)
+  const [draggedLayout, setDraggedLayout] = useState<LayoutType | null>(null)
+  const [draggedElement, setDraggedElement] = useState<ElementType | null>(null)
   const [templateContent, setTemplateContent] = useState<LayoutType[]>([])
 
-  console.log('draggedElement: ', draggedElement)
+  // console.log('draggedElement: ', draggedElement)
   return (
     <SessionProvider>
       <CommonContextProvider.Provider value={{ loading, setLoading }}>
         <ScreenSizeContext.Provider value={{ screenSize, setScreenSize }}>
-          <DragDropLayoutContext.Provider value={{ draggedElement, setDraggedElement }}>
+          <DragDropLayoutContext.Provider
+            value={{ draggedLayout, setDraggedLayout, draggedElement, setDraggedElement }}
+          >
             <TemplateContentContext.Provider value={{ templateContent, setTemplateContent }}>
               {children}
             </TemplateContentContext.Provider>

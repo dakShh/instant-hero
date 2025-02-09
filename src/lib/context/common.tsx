@@ -12,8 +12,10 @@ interface ScreenSizeContextType {
 }
 
 interface DragDropLayoutContextType {
-  draggedElement: LayoutType | null
-  setDraggedElement: React.Dispatch<React.SetStateAction<LayoutType | null>>
+  draggedLayout: LayoutType | null
+  setDraggedLayout: React.Dispatch<React.SetStateAction<LayoutType | null>>
+  draggedElement: ElementType | null
+  setDraggedElement: React.Dispatch<React.SetStateAction<ElementType | null>>
 }
 
 interface TemplateContentContextType {

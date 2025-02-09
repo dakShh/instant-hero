@@ -31,9 +31,6 @@ export const authOptions: NextAuthOptions = {
           },
           update: {}
         })
-
-        console.log('profile created!')
-        console.log(user)
       } catch (error) {
         console.log('Signin Error: ', error)
         throw new Error('Error signing in.. Try again later')

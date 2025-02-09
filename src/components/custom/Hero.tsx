@@ -8,7 +8,10 @@ export default function Hero() {
     <div className='relative overflow-hidden'>
       <Header />
       {/* Gradients */}
-      <div aria-hidden='true' className='absolute -top-[27rem] start-1/2 flex -translate-x-1/2 transform'>
+      <div
+        aria-hidden='true'
+        className='absolute -top-[27rem] start-1/2 flex -translate-x-1/2 transform'
+      >
         <div className='h-[44rem] w-[25rem] -translate-x-[10rem] rotate-[-60deg] transform bg-gradient-to-r from-background/50 to-background blur-3xl' />
         <div className='h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 rounded-full bg-gradient-to-tl from-primary/20 via-primary/90 to-primary/20 blur-3xl' />
       </div>
@@ -26,8 +29,8 @@ export default function Hero() {
             {/* End Title */}
             <div className='mt-5 max-w-3xl'>
               <p className='text-xl text-primary-foreground/40'>
-                Over 10+ fully responsive, UI blocks you can drop into your Shadcn UI projects and customize to your
-                heart&apos;s content.
+                Over 10+ fully responsive, UI blocks you can drop into your Shadcn UI projects and
+                customize to your heart&apos;s content.
               </p>
             </div>
             {/* Buttons */}

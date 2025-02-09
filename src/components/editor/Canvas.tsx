@@ -1,12 +1,21 @@
-import { cn } from '@/lib/utils'
-import { useDraggedElement, useScreenSize, useTemplateContent } from '@/providers'
+// Core
 import { DragEvent, useState } from 'react'
-import { ElementType, LayoutType } from './ElementSidebar'
+
+// Types
+import { LayoutType } from './ElementSidebar'
+
+// Utils
+import { cn } from '@/lib/utils'
+
+// Context Providers
+import { useDraggedElement, useScreenSize, useTemplateContent } from '@/providers'
+
+// Components
 import Columns from './elements/Columns'
 
 export default function Canvas() {
   const { screenSize } = useScreenSize()
-  const { draggedElement, setDraggedElement } = useDraggedElement()
+  const { draggedLayout, setDraggedLayout } = useDraggedElement()
   const { templateContent, setTemplateContent } = useTemplateContent()
 
   const [onDragOver, setOnDragOver] = useState<boolean>(false)
@@ -17,8 +26,8 @@ export default function Canvas() {
   }
 
   function handleDrop() {
-    if (draggedElement) setTemplateContent((prev) => [...prev, draggedElement])
-    setDraggedElement(null)
+    if (draggedLayout) setTemplateContent((prev) => [...prev, draggedLayout])
+    setDraggedLayout(null)
     setOnDragOver(false)
   }
 
@@ -38,17 +47,18 @@ export default function Canvas() {
           `${onDragOver ? 'bg-secondary' : 'bg-white'}`,
           'w-full p-4',
           'text-secondary-foreground'
+          // 'overflow-y-scroll max-h-[486px]'
         )}
       >
         <div className='invisible grid-cols-3'></div>
         {templateContent?.length > 0 ? (
           templateContent?.map((content, index) => (
-            <div key={index} className='mb-2 grid'>
+            <div key={index} className='grid w-full'>
               {getLayoutComponent(content)}
             </div>
           ))
         ) : (
-          <div className={cn('bg-neutral-200 border border-dashed', 'p-4', 'text-center')}>
+          <div className={cn('bg-neutral-200 border border-dashed', 'p-4', 'text-center text-sm')}>
             Add Layouts Here
           </div>
         )}
