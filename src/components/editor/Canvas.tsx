@@ -12,6 +12,8 @@ import { useDraggedElement, useScreenSize, useTemplateContent } from '@/provider
 
 // Components
 import Columns from './elements/Columns'
+import { Button } from '../ui/button'
+import { RefreshCcw } from 'lucide-react'
 
 export default function Canvas() {
   const { screenSize } = useScreenSize()
@@ -36,7 +38,17 @@ export default function Canvas() {
   }
 
   return (
-    <div className='p-10 flex justify-center '>
+    <div className='px-8 py-16 relative flex justify-center '>
+      <div className='absolute right-[30px] top-[20px]'>
+        <Button
+          size={'icon'}
+          onClick={() => {
+            setTemplateContent([])
+          }}
+        >
+          {<RefreshCcw />}
+        </Button>
+      </div>
       <div
         onDragOver={handleDragOver}
         onDragLeave={() => setOnDragOver(false)}

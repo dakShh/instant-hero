@@ -5,7 +5,7 @@ import { DragEvent, useState } from 'react'
 import { ElementType, LayoutType } from '../ElementSidebar'
 
 // Context Providers
-import { useDraggedElement, useScreenSize, useTemplateContent } from '@/providers'
+import { useDraggedElement, useScreenSize, useSelectedElement, useTemplateContent } from '@/providers'
 
 // Components
 import { Button } from '@/components/ui/button'
@@ -17,12 +17,11 @@ import ImageElement from './ImageElement'
 
 export default function Columns({ element }: { element: LayoutType }) {
   const { screenSize } = useScreenSize()
-  const { templateContent, setTemplateContent } = useTemplateContent()
-  // console.log('templateContent: ', templateContent)
+  const { setTemplateContent } = useTemplateContent()
   const { draggedElement, draggedLayout, setDraggedElement } = useDraggedElement()
+  const { selectedElement, setSelectedElement } = useSelectedElement()
 
   const [onDragOver, setOnDragOver] = useState<{ index: number; columnId?: string } | undefined>()
-  console.log('onDragOver: ', onDragOver)
 
   const class_col = `grid-cols-${element.numOfColumn.toString()}`
 
@@ -51,7 +50,7 @@ export default function Columns({ element }: { element: LayoutType }) {
     setOnDragOver(undefined)
   }
 
-  const renderComponent = (component: ElementType) => {
+  const renderComponent = (component: ElementType, index: number) => {
     if (component.type === 'button') {
       return <Button className='mx-auto w-full'>Button</Button>
     } else if (component.type === 'text') {
@@ -71,8 +70,17 @@ export default function Columns({ element }: { element: LayoutType }) {
       <div className='w-full overflow-hidden'>
         {arr.map((x, index) => {
           return (
-            <div key={index} className='w-full flex'>
-              {renderComponent(x)}
+            <div
+              key={index}
+              onClick={() => {
+                setSelectedElement(x)
+              }}
+              className={cn(
+                `${selectedElement?.id === x?.id && 'border-2 border-blue-600 border-dashed'}`,
+                'w-full flex cursor-pointer'
+              )}
+            >
+              {renderComponent(x, index)}
             </div>
           )
         })}
@@ -89,6 +97,9 @@ export default function Columns({ element }: { element: LayoutType }) {
           onDrop={handleDrop}
           onDragLeave={() => {
             setOnDragOver(undefined)
+          }}
+          onClick={() => {
+            // layout index: element[index]
           }}
           className={cn(
             `${!element[index] && 'border border-neutral-400 border-dashed bg-neutral-200'}`,

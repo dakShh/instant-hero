@@ -23,6 +23,11 @@ interface TemplateContentContextType {
   setTemplateContent: React.Dispatch<React.SetStateAction<LayoutType[]>>
 }
 
+interface SelectedElementContextType {
+  selectedElement: ElementType | null
+  setSelectedElement: React.Dispatch<React.SetStateAction<ElementType | null>>
+}
+
 export const CommonContextProvider = createContext<CommonContextType | undefined>(undefined)
 
 export const ScreenSizeContext = createContext<ScreenSizeContextType | undefined>(undefined)
@@ -30,3 +35,5 @@ export const ScreenSizeContext = createContext<ScreenSizeContextType | undefined
 export const DragDropLayoutContext = createContext<DragDropLayoutContextType | null>(null)
 
 export const TemplateContentContext = createContext<TemplateContentContextType | undefined>(undefined)
+
+export const SelectedElementContext = createContext<SelectedElementContextType | undefined>(undefined)
