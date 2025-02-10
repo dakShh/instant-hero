@@ -49,6 +49,9 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       document.removeEventListener('keydown', handleKeyDown)
     }
   }, [])
+
+  console.log('templateContent: ', templateContent)
+
   return (
     <SessionProvider>
       <CommonContextProvider.Provider value={{ loading, setLoading }}>

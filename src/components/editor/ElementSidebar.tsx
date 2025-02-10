@@ -31,6 +31,8 @@ export interface ElementType {
   icon: LucideIcon
   id?: string
   content?: string
+  style?: React.CSSProperties
+  tailwindCSS?: string
 }
 
 const LAYOUTS: LayoutType[] = [
@@ -53,19 +55,23 @@ const LAYOUTS: LayoutType[] = [
     icon: Columns3
   }
 ]
-
 const ELEMENTS: ElementType[] = [
   {
     label: 'Button',
     type: 'button',
     icon: CirclePower,
-    content: 'Button'
+    content: 'Button',
+    style: {
+      width: '100%'
+    },
+    tailwindCSS: ``
   },
   {
     label: 'Text',
     type: 'text',
     icon: Type,
-    content: 'Sample Text'
+    content: 'Sample Text',
+    tailwindCSS: ``
   },
   {
     label: 'Image',

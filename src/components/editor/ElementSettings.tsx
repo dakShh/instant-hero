@@ -1,12 +1,15 @@
 import { useSelectedElement, useTemplateContent } from '@/providers'
-import InputField from './settings/InputField'
 import { ElementType } from './ElementSidebar'
+import ContentSetting from './settings/ContentSetting'
+import TailwindSetting from './settings/TailwindSetting'
+
+type FieldNameTypes = 'content' | 'tailwindCSS'
 
 export default function ElementSettings() {
   const { selectedElement, setSelectedElement } = useSelectedElement()
   const { setTemplateContent } = useTemplateContent()
 
-  const onHandleInputChange = (fieldName: 'content', value: string) => {
+  const onHandleInputChange = (fieldName: FieldNameTypes, value: string) => {
     const updatedData = { ...selectedElement?.element }
     updatedData[fieldName] = value
 
@@ -32,7 +35,7 @@ export default function ElementSettings() {
               if (currElement?.id === selectedElement?.element?.id) {
                 return {
                   ...currElement,
-                  content: value
+                  [fieldName]: value
                 }
               }
               return currElement
@@ -46,12 +49,19 @@ export default function ElementSettings() {
 
   return (
     <div className='px-5 py-4'>
-      <div className='font-bold text-xl mb-4'> Settings </div>
+      <div className='font-bold text-xl mb-4 '> Settings </div>
 
-      {selectedElement?.element?.content && selectedElement?.element?.content && (
-        <InputField
-          value={selectedElement?.element?.content}
+      {selectedElement?.element && (
+        <ContentSetting
+          value={selectedElement?.element?.content ?? ''}
           handleChange={(value) => onHandleInputChange('content', value)}
+        />
+      )}
+
+      {selectedElement && (
+        <TailwindSetting
+          value={selectedElement?.element?.tailwindCSS ?? ''}
+          handleChange={(value) => onHandleInputChange('tailwindCSS', value)}
         />
       )}
     </div>

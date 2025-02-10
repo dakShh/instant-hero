@@ -38,7 +38,7 @@ export default function Canvas() {
   }
 
   return (
-    <div className='px-8 py-16 relative flex justify-center '>
+    <div className='px-8 py-16 relative flex justify-center text-black'>
       <div className='absolute right-[30px] top-[20px]'>
         <Button
           size={'icon'}

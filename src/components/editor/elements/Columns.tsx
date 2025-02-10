@@ -14,6 +14,7 @@ import TextElement from './TextElement'
 // Utils
 import { cn } from '@/lib/utils'
 import ImageElement from './ImageElement'
+import ButtonElement from './ButtonElement'
 
 export default function Columns({ element }: { element: LayoutType }) {
   const { screenSize } = useScreenSize()
@@ -52,7 +53,8 @@ export default function Columns({ element }: { element: LayoutType }) {
 
   const renderElement = (element: ElementType) => {
     if (element.type === 'button') {
-      return <Button className='mx-auto w-full'>{element?.content ?? 'Button'}</Button>
+      // return <Button className='mx-auto w-full'>{element?.content ?? 'Button'}</Button>
+      return <ButtonElement element={element} />
     } else if (element.type === 'text') {
       return <TextElement element={element} />
     } else if (element.type === 'image') {
