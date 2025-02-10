@@ -12,6 +12,7 @@ import Footer from '@/components/custom/Footer'
 // Components
 import ElementSidebar from '@/components/editor/ElementSidebar'
 import Canvas from '@/components/editor/Canvas'
+import ElementSettings from '@/components/editor/ElementSettings'
 
 export default function Editor() {
   const { status } = useSession()
@@ -34,7 +35,7 @@ export default function Editor() {
         <div className={cn('col-span-3', 'bg-neutral-600')}>
           <Canvas />
         </div>
-        <div>Settings</div>
+        <ElementSettings />
       </div>
       <Footer />
     </div>

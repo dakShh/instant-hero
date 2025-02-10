@@ -50,37 +50,37 @@ export default function Columns({ element }: { element: LayoutType }) {
     setOnDragOver(undefined)
   }
 
-  const renderComponent = (component: ElementType, index: number) => {
-    if (component.type === 'button') {
-      return <Button className='mx-auto w-full'>Button</Button>
-    } else if (component.type === 'text') {
-      return <TextElement />
-    } else if (component.type === 'image') {
+  const renderElement = (element: ElementType) => {
+    if (element.type === 'button') {
+      return <Button className='mx-auto w-full'>{element?.content ?? 'Button'}</Button>
+    } else if (element.type === 'text') {
+      return <TextElement element={element} />
+    } else if (element.type === 'image') {
       return <ImageElement />
     }
 
     return <div>idk</div>
   }
-  const getElementComponent = (arr: ElementType[] | null) => {
-    if (!arr) {
-      return <div className='py-2 text-center text-sm'>Drag Elements Here</div>
+  const getElementComponent = (childrens: ElementType[] | null, columnIndex: number) => {
+    if (!childrens) {
+      return <div className='py-4 text-center text-sm'>Drag Elements Here</div>
     }
 
     return (
       <div className='w-full overflow-hidden'>
-        {arr.map((x, index) => {
+        {childrens.map((child, index) => {
           return (
             <div
               key={index}
               onClick={() => {
-                setSelectedElement(x)
+                setSelectedElement({ columnId: element?.id ?? '', columnIndex, element: child })
               }}
               className={cn(
-                `${selectedElement?.id === x?.id && 'border-2 border-blue-600 border-dashed'}`,
+                `${selectedElement?.element?.id === child?.id && 'border-2 border-blue-600 border-dashed'}`,
                 'w-full flex cursor-pointer'
               )}
             >
-              {renderComponent(x, index)}
+              {renderElement(child)}
             </div>
           )
         })}
@@ -107,7 +107,7 @@ export default function Columns({ element }: { element: LayoutType }) {
             'w-full'
           )}
         >
-          {getElementComponent(element[index])}
+          {getElementComponent(element[index], index)}
         </div>
       ))}
     </div>

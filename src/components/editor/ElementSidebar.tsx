@@ -30,6 +30,7 @@ export interface ElementType {
   type: string
   icon: LucideIcon
   id?: string
+  content?: string
 }
 
 const LAYOUTS: LayoutType[] = [
@@ -57,12 +58,14 @@ const ELEMENTS: ElementType[] = [
   {
     label: 'Button',
     type: 'button',
-    icon: CirclePower
+    icon: CirclePower,
+    content: 'Button'
   },
   {
     label: 'Text',
     type: 'text',
-    icon: Type
+    icon: Type,
+    content: 'Sample Text'
   },
   {
     label: 'Image',

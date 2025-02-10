@@ -16,8 +16,11 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [draggedLayout, setDraggedLayout] = useState<LayoutType | null>(null)
   const [draggedElement, setDraggedElement] = useState<ElementType | null>(null)
   const [templateContent, setTemplateContent] = useState<LayoutType[]>([])
-  const [selectedElement, setSelectedElement] = useState<ElementType | null>(null)
-  console.log('selectedElement: ', selectedElement)
+  const [selectedElement, setSelectedElement] = useState<{
+    element: ElementType
+    columnIndex: number
+    columnId: string
+  } | null>(null)
 
   useEffect(() => {
     if (typeof window !== undefined) {

@@ -24,8 +24,18 @@ interface TemplateContentContextType {
 }
 
 interface SelectedElementContextType {
-  selectedElement: ElementType | null
-  setSelectedElement: React.Dispatch<React.SetStateAction<ElementType | null>>
+  selectedElement: {
+    columnId: string
+    element: ElementType
+    columnIndex: number
+  } | null
+  setSelectedElement: React.Dispatch<
+    React.SetStateAction<{
+      columnId: string
+      element: ElementType
+      columnIndex: number
+    } | null>
+  >
 }
 
 export const CommonContextProvider = createContext<CommonContextType | undefined>(undefined)
