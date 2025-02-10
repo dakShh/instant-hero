@@ -34,6 +34,21 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       localStorage.setItem('templateContent', JSON.stringify(templateContent))
     }
   }, [templateContent])
+
+  // Clear the state when ESC is pressed
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedElement(null)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
   return (
     <SessionProvider>
       <CommonContextProvider.Provider value={{ loading, setLoading }}>
